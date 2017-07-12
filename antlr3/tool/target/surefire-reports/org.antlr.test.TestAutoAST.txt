@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.antlr.test.TestAutoAST
+-------------------------------------------------------------------------------
+Tests run: 55, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.254 sec - in org.antlr.test.TestAutoAST

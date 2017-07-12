@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.antlr.test.TestDFAConversion" time="0.084" tests="81" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.60-b23"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/Roel/antlr3"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="NL"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/Roel/antlr3"/>
+    <property name="java.runtime.version" value="1.8.0_60-b27"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/0t/3gzmx2m144qfsy2k46gkf_1m0000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.5.0/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/Roel/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/usr/local/Cellar/maven/3.5.0/libexec/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.12.5"/>
+    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.5.0/libexec/lib/jansi-native/osx64"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/Roel"/>
+    <property name="user.timezone" value="Europe/Amsterdam"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Roel"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.5.0/libexec/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="nl"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_60"/>
+    <property name="java.ext.dirs" value="/Users/Roel/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.5.0/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testInvokeRule" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAB_or_AC" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAB_or_AC_k2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAB_or_AC_k1" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testselfRecurseNonDet" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testRecursionOverflow" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testRecursionOverflow2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testRecursionOverflowWithPredOk" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testRecursionOverflowWithPredOk2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testCannotSeePastRecursion" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSynPredResolvesRecursion" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSynPredMissingInMiddle" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAutoBacktrackAndPredMissingInMiddle" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSemPredResolvesRecursion" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSemPredResolvesRecursion2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSemPredResolvesRecursion3" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSynPredResolvesRecursion2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSynPredResolvesRecursion3" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSynPredResolvesRecursion4" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testSynPredResolvesRecursionInLexer" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAutoBacktrackResolvesRecursionInLexer" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAutoBacktrackResolvesRecursion" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testselfRecurseNonDet2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testIndirectRecursionLoop" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testIndirectRecursionLoop2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testIndirectRecursionLoop3" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testifThenElse" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testifThenElseChecksStackSuffixConflict" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testDoubleInvokeRuleLeftEdge" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testimmediateTailRecursion" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testAStar_immediateTailRecursion" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testNoStartRule" classname="org.antlr.test.TestDFAConversion" time="0.007"/>
+  <testcase name="testAStar_immediateTailRecursion2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testimmediateLeftRecursion" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testIndirectLeftRecursion" classname="org.antlr.test.TestDFAConversion" time="0.002"/>
+  <testcase name="testLeftRecursionInMultipleCycles" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testCycleInsideRuleDoesNotForceInfiniteRecursion" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAStar" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testAorBorCStar" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAPlus" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testAPlusNonGreedyWhenDeterministic" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAPlusNonGreedyWhenNonDeterministic" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAPlusGreedyWhenNonDeterministic" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAorBorCPlus" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testAOptional" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAorBorCOptional" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAStarBOrAStarC" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testAStarBOrAPlusC" classname="org.antlr.test.TestDFAConversion" time="0.002"/>
+  <testcase name="testAOrBPlusOrAPlus" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testLoopbackAndExit" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testOptionalAltAndBypass" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testResolveLL1ByChoosingFirst" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testResolveLL2ByChoosingFirst" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testResolveLL2MixAlt" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testIndirectIFThenElseStyleAmbig" classname="org.antlr.test.TestDFAConversion" time="0.002"/>
+  <testcase name="testComplement" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testComplementToken" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testNoSetCollapseWithActions" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testComplementChar" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testComplementCharSet" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testRuleAltsSetCollapse" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testTokensRuleAltsDoNotCollapse" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testMultipleSequenceCollision" classname="org.antlr.test.TestDFAConversion" time="0.005">
+    <failure message="expected:&lt;[A]&gt; but was:&lt;[B]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<[A]> but was:<[B]>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestDFAConversion.checkDecision(TestDFAConversion.java:1673)
+	at org.antlr.test.TestDFAConversion.testMultipleSequenceCollision(TestDFAConversion.java:1208)
+]]></failure>
+  </testcase>
+  <testcase name="testMultipleAltsSameSequenceCollision" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testFollowReturnsToLoopReenteringSameRule" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testTokenCallsAnotherOnLeftEdge" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testSelfRecursionAmbigAlts" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testIndirectRecursionAmbigAlts" classname="org.antlr.test.TestDFAConversion" time="0.002"/>
+  <testcase name="testTailRecursionInvokedFromArbitraryLookaheadDecision" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testWildcardStarK1AndNonGreedyByDefaultInParser" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testWildcardPlusK1AndNonGreedyByDefaultInParser" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testGatedSynPred" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testHoistedGatedSynPred" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testHoistedGatedSynPred2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testGreedyGetsNoErrorForAmbig" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testGreedyNonLLStarStillGetsError" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testGreedyRecOverflowStillGetsError" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testCyclicTableCreation" classname="org.antlr.test.TestDFAConversion" time="0"/>
+  <testcase name="testWildcardInTreeGrammar" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testWildcardInTreeGrammar2" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+  <testcase name="testA" classname="org.antlr.test.TestDFAConversion" time="0.001"/>
+</testsuite>

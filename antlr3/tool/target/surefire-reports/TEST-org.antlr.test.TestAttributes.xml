@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.antlr.test.TestAttributes" time="2.612" tests="119" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.60-b23"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/Roel/antlr3"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="NL"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/Roel/antlr3"/>
+    <property name="java.runtime.version" value="1.8.0_60-b27"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/0t/3gzmx2m144qfsy2k46gkf_1m0000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.5.0/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/Roel/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/usr/local/Cellar/maven/3.5.0/libexec/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.12.5"/>
+    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.5.0/libexec/lib/jansi-native/osx64"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/Roel"/>
+    <property name="user.timezone" value="Europe/Amsterdam"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="Roel"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.5.0/libexec/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="nl"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_60"/>
+    <property name="java.ext.dirs" value="/Users/Roel/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.5.0/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testEscaped$InAction" classname="org.antlr.test.TestAttributes" time="0.12"/>
+  <testcase name="testArguments" classname="org.antlr.test.TestAttributes" time="0.043"/>
+  <testcase name="testComplicatedArgParsing" classname="org.antlr.test.TestAttributes" time="0.047"/>
+  <testcase name="testBracketArgParsing" classname="org.antlr.test.TestAttributes" time="0.037"/>
+  <testcase name="testStringArgParsing" classname="org.antlr.test.TestAttributes" time="0.023"/>
+  <testcase name="testComplicatedSingleArgParsing" classname="org.antlr.test.TestAttributes" time="0.023"/>
+  <testcase name="testArgWithLT" classname="org.antlr.test.TestAttributes" time="0.021"/>
+  <testcase name="testGenericsAsArgumentDefinition" classname="org.antlr.test.TestAttributes" time="0.023"/>
+  <testcase name="testGenericsAsArgumentDefinition2" classname="org.antlr.test.TestAttributes" time="0.015"/>
+  <testcase name="testGenericsAsReturnValue" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testComplicatedArgParsingWithTranslation" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testRefToReturnValueBeforeRefToPredefinedAttr" classname="org.antlr.test.TestAttributes" time="0.019"/>
+  <testcase name="testRuleLabelBeforeRefToPredefinedAttr" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testInvalidArguments" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testReturnValue" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testActionNotMovedToSynPred" classname="org.antlr.test.TestAttributes" time="0.032"/>
+  <testcase name="testReturnValueWithNumber" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testReturnValues" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testReturnWithMultipleRuleRefs" classname="org.antlr.test.TestAttributes" time="0.018"/>
+  <testcase name="testInvalidReturnValues" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testTokenLabels" classname="org.antlr.test.TestAttributes" time="0.018"/>
+  <testcase name="testEscapedLessThanInAction" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testRuleLabels" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testAmbiguRuleRef" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testRuleLabelsWithSpecialToken" classname="org.antlr.test.TestAttributes" time="0.015"/>
+  <testcase name="testForwardRefRuleLabels" classname="org.antlr.test.TestAttributes" time="0.013"/>
+  <testcase name="testInvalidRuleLabelAccessesParameter" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testInvalidRuleLabelAccessesScopeAttribute" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testInvalidRuleAttribute" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testMissingRuleAttribute" classname="org.antlr.test.TestAttributes" time="0.002"/>
+  <testcase name="testMissingUnlabeledRuleAttribute" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testNonDynamicAttributeOutsideRule" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testNonDynamicAttributeOutsideRule2" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testBasicGlobalScope" classname="org.antlr.test.TestAttributes" time="0.018"/>
+  <testcase name="testUnknownGlobalScope" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testIndexedGlobalScope" classname="org.antlr.test.TestAttributes" time="0.019"/>
+  <testcase name="test0IndexedGlobalScope" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testAbsoluteIndexedGlobalScope" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testScopeAndAttributeWithUnderscore" classname="org.antlr.test.TestAttributes" time="0.013"/>
+  <testcase name="testSharedGlobalScope" classname="org.antlr.test.TestAttributes" time="0.015"/>
+  <testcase name="testGlobalScopeOutsideRule" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testRuleScopeOutsideRule" classname="org.antlr.test.TestAttributes" time="0.013"/>
+  <testcase name="testBasicRuleScope" classname="org.antlr.test.TestAttributes" time="0.015"/>
+  <testcase name="testUnqualifiedRuleScopeAccessInsideRule" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testIsolatedDynamicRuleScopeRef" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testDynamicRuleScopeRefInSubrule" classname="org.antlr.test.TestAttributes" time="0.017"/>
+  <testcase name="testIsolatedGlobalScopeRef" classname="org.antlr.test.TestAttributes" time="0.017"/>
+  <testcase name="testRuleScopeFromAnotherRule" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testFullyQualifiedRefToCurrentRuleParameter" classname="org.antlr.test.TestAttributes" time="0.017"/>
+  <testcase name="testFullyQualifiedRefToCurrentRuleRetVal" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testSetFullyQualifiedRefToCurrentRuleRetVal" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testIsolatedRefToCurrentRule" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testIsolatedRefToRule" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testFullyQualifiedRefToTemplateAttributeInCurrentRule" classname="org.antlr.test.TestAttributes" time="0.018"/>
+  <testcase name="testRuleRefWhenRuleHasScope" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testDynamicScopeRefOkEvenThoughRuleRefExists" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testRefToTemplateAttributeForCurrentRule" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testRefToTextAttributeForCurrentRule" classname="org.antlr.test.TestAttributes" time="0.013"/>
+  <testcase name="testRefToStartAttributeForCurrentRule" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testTokenLabelFromMultipleAlts" classname="org.antlr.test.TestAttributes" time="0.015"/>
+  <testcase name="testRuleLabelFromMultipleAlts" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testUnknownDynamicAttribute" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testUnknownGlobalDynamicAttribute" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testUnqualifiedRuleScopeAttribute" classname="org.antlr.test.TestAttributes" time="0"/>
+  <testcase name="testRuleAndTokenLabelTypeMismatch" classname="org.antlr.test.TestAttributes" time="0"/>
+  <testcase name="testListAndTokenLabelTypeMismatch" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testListAndRuleLabelTypeMismatch" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testArgReturnValueMismatch" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testSimplePlusEqualLabel" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testPlusEqualStringLabel" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testPlusEqualSetLabel" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testPlusEqualWildcardLabel" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testImplicitTokenLabel" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testImplicitRuleLabel" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testReuseExistingLabelWithImplicitRuleLabel" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testReuseExistingListLabelWithImplicitRuleLabel" classname="org.antlr.test.TestAttributes" time="0.015"/>
+  <testcase name="testReuseExistingLabelWithImplicitTokenLabel" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testReuseExistingListLabelWithImplicitTokenLabel" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testRuleLabelWithoutOutputOption" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testRuleLabelOnTwoDifferentRulesAST" classname="org.antlr.test.TestAttributes" time="0.697"/>
+  <testcase name="testRuleLabelOnTwoDifferentRulesTemplate" classname="org.antlr.test.TestAttributes" time="0.329"/>
+  <testcase name="testMissingArgs" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testArgsWhenNoneDefined" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testReturnInitValue" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testMultipleReturnInitValue" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testCStyleReturnInitValue" classname="org.antlr.test.TestAttributes" time="0.001"/>
+  <testcase name="testArgsWithInitValues" classname="org.antlr.test.TestAttributes" time="0.014"/>
+  <testcase name="testArgsOnToken" classname="org.antlr.test.TestAttributes" time="0.013"/>
+  <testcase name="testArgsOnTokenInLexer" classname="org.antlr.test.TestAttributes" time="0.015"/>
+  <testcase name="testLabelOnRuleRefInLexer" classname="org.antlr.test.TestAttributes" time="0.03"/>
+  <testcase name="testRefToRuleRefInLexer" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testRefToRuleRefInLexerNoAttribute" classname="org.antlr.test.TestAttributes" time="0.013"/>
+  <testcase name="testCharLabelInLexer" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testCharListLabelInLexer" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testWildcardCharLabelInLexer" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testWildcardCharListLabelInLexer" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testMissingArgsInLexer" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testLexerRulePropertyRefs" classname="org.antlr.test.TestAttributes" time="0.013"/>
+  <testcase name="testLexerLabelRefs" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testSettingLexerRulePropertyRefs" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testArgsOnTokenInLexerRuleOfCombined" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testMissingArgsOnTokenInLexerRuleOfCombined" classname="org.antlr.test.TestAttributes" time="0.015"/>
+  <testcase name="testTokenLabelTreeProperty" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testTokenRefTreeProperty" classname="org.antlr.test.TestAttributes" time="0.016"/>
+  <testcase name="testAmbiguousTokenRef" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testAmbiguousTokenRefWithProp" classname="org.antlr.test.TestAttributes" time="0.017"/>
+  <testcase name="testRuleRefWithDynamicScope" classname="org.antlr.test.TestAttributes" time="0.012"/>
+  <testcase name="testAssignToOwnRulenameAttr" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testAssignToOwnParamAttr" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testIllegalAssignToOwnRulenameAttr" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testIllegalAssignToLocalAttr" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testIllegalAssignRuleRefAttr" classname="org.antlr.test.TestAttributes" time="0.013"/>
+  <testcase name="testIllegalAssignTokenRefAttr" classname="org.antlr.test.TestAttributes" time="0.009"/>
+  <testcase name="testAssignToTreeNodeAttribute" classname="org.antlr.test.TestAttributes" time="0.018"/>
+  <testcase name="testDoNotTranslateAttributeCompare" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testDoNotTranslateScopeAttributeCompare" classname="org.antlr.test.TestAttributes" time="0.011"/>
+  <testcase name="testTreeRuleStopAttributeIsInvalid" classname="org.antlr.test.TestAttributes" time="0.01"/>
+  <testcase name="testRefToTextAttributeForCurrentTreeRule" classname="org.antlr.test.TestAttributes" time="0.009"/>
+  <testcase name="testTypeOfGuardedAttributeRefIsCorrect" classname="org.antlr.test.TestAttributes" time="0.017"/>
+</testsuite>

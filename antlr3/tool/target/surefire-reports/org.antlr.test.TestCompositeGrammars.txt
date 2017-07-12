@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.antlr.test.TestCompositeGrammars
+-------------------------------------------------------------------------------
+Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.223 sec - in org.antlr.test.TestCompositeGrammars
