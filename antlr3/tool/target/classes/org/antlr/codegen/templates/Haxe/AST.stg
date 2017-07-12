@@ -81,7 +81,7 @@ ruleLabelDefs() ::= <<
 <if(autoAST)>
 <if(outerAlt)>
 <if(!rewriteMode)>
-root_0 = <ASTLabelType>(adaptor.nil());<\n>
+root_0 = cast(adaptor.nil(), <ASTLabelType>);<\n>
 <endif>
 <endif>
 <endif>
@@ -165,12 +165,12 @@ if ( <actions.(actionScope).synpredgate> ) {<\n>
 <endif>
 <prevRuleRootRef()>.tree = root_0;
 <rewriteCodeLabels()>
-root_0 = <ASTLabelType>(adaptor.nil());
+root_0 = cast(adaptor.nil(), <ASTLabelType>);
 <alts:rewriteAlt(); separator="else ">
 <! if tree parser and rewrite=true !>
 <if(TREE_PARSER)>
 <if(rewriteMode)>
-<prevRuleRootRef()>.tree = <ASTLabelType>(adaptor.rulePostProcessing(root_0));
+<prevRuleRootRef()>.tree = cast(adaptor.rulePostProcessing(root_0), <ASTLabelType>);
 input.replaceChildren(adaptor.getParent(retval.start),
                       adaptor.getChildIndex(retval.start),
                       adaptor.getChildIndex(_last),
@@ -280,7 +280,7 @@ rewriteEmptyAlt() ::= "root_0 = null;"
 rewriteTree(root,children,description,enclosingTreeLevel,treeLevel) ::= <<
 // <fileName>:<description>
 {
-var root_<treeLevel>:<ASTLabelType> = <ASTLabelType>(adaptor.nil());
+var root_<treeLevel>:<ASTLabelType> = cast(adaptor.nil(), <ASTLabelType>);
 <root:rewriteElement()>
 <children:rewriteElement()>
 adaptor.addChild(root_<enclosingTreeLevel>, root_<treeLevel>);
@@ -311,7 +311,7 @@ adaptor.addChild(root_<treeLevel>, stream_<label>.nextNode());<\n>
 
 /** Gen ^($label ...) */
 rewriteTokenLabelRefRoot(label,elementIndex) ::= <<
-root_<treeLevel> = <ASTLabelType>(adaptor.becomeRoot(stream_<label>.nextNode(), root_<treeLevel>));<\n>
+root_<treeLevel> = cast(adaptor.becomeRoot(stream_<label>.nextNode(), root_<treeLevel>), <ASTLabelType>);<\n>
 >>
 
 /** Gen ^($label ...) where label+=... */
@@ -319,7 +319,7 @@ rewriteTokenListLabelRefRoot ::= rewriteTokenLabelRefRoot
 
 /** Gen ^(ID ...) or ^(ID[args] ...) */
 rewriteTokenRefRoot(token,elementIndex,terminalOptions,args) ::= <<
-root_<treeLevel> = <ASTLabelType>(adaptor.becomeRoot(<createRewriteNodeFromElement(...)>, root_<treeLevel>));<\n>
+root_<treeLevel> = cast(adaptor.becomeRoot(<createRewriteNodeFromElement(...)>, root_<treeLevel>), <ASTLabelType>);<\n>
 >>
 
 rewriteImaginaryTokenRef(args,token,terminalOptions,elementIndex) ::= <<
@@ -327,7 +327,7 @@ adaptor.addChild(root_<treeLevel>, <createImaginaryNode(token,terminalOptions,ar
 >>
 
 rewriteImaginaryTokenRefRoot(args,token,terminalOptions,elementIndex) ::= <<
-root_<treeLevel> = <ASTLabelType>(adaptor.becomeRoot(<createImaginaryNode(token,terminalOptions,args)>, root_<treeLevel>));<\n>
+root_<treeLevel> = cast(adaptor.becomeRoot(<createImaginaryNode(token,terminalOptions,args)>, root_<treeLevel>), <ASTLabelType>);<\n>
 >>
 
 /** plain -> {foo} action */
@@ -347,7 +347,7 @@ adaptor.addChild(root_<treeLevel>, stream_<rule>.nextTree());<\n>
 >>
 
 rewriteRuleRefRoot(rule) ::= <<
-root_<treeLevel> = <ASTLabelType>(adaptor.becomeRoot(stream_<rule>.nextNode(), root_<treeLevel>));<\n>
+root_<treeLevel> = cast(adaptor.becomeRoot(stream_<rule>.nextNode(), root_<treeLevel>), <ASTLabelType>);<\n>
 >>
 
 rewriteNodeAction(action) ::= <<
@@ -355,7 +355,7 @@ adaptor.addChild(root_<treeLevel>, <action>);<\n>
 >>
 
 rewriteNodeActionRoot(action) ::= <<
-root_<treeLevel> = <ASTLabelType>(adaptor.becomeRoot(<action>, root_<treeLevel>));<\n>
+root_<treeLevel> = cast(adaptor.becomeRoot(<action>, root_<treeLevel>), <ASTLabelType>);<\n>
 >>
 
 /** Gen $ruleLabel ... where defined via ruleLabel=rule */
@@ -370,12 +370,12 @@ adaptor.addChild(root_<treeLevel>, stream_<label>.nextTree());<\n>
 
 /** Gen ^($ruleLabel ...) where ruleLabel=rule */
 rewriteRuleLabelRefRoot(label) ::= <<
-root_<treeLevel> = <ASTLabelType>(adaptor.becomeRoot(stream_<label>.nextNode(), root_<treeLevel>));<\n>
+root_<treeLevel> = cast(adaptor.becomeRoot(stream_<label>.nextNode(), root_<treeLevel>), <ASTLabelType>);<\n>
 >>
 
 /** Gen ^($ruleLabel ...) where ruleLabel+=rule */
 rewriteRuleListLabelRefRoot(label) ::= <<
-root_<treeLevel> = <ASTLabelType>(adaptor.becomeRoot(stream_<label>.nextNode(), root_<treeLevel>));<\n>
+root_<treeLevel> = cast(adaptor.becomeRoot(stream_<label>.nextNode(), root_<treeLevel>), <ASTLabelType>);<\n>
 >>
 
 rewriteWildcardLabelRef(label) ::= <<
@@ -388,7 +388,7 @@ createImaginaryNode(tokenType,terminalOptions,args) ::= <<
 <! new MethodNode(IDLabel, args) !>
 new <terminalOptions.node>(<tokenType><if(args)>, <args; separator=", "><endif>)
 <else>
-<ASTLabelType>(adaptor.create(<tokenType>, <args; separator=", "><if(!args)>"<tokenType>"<endif>))
+cast(adaptor.create(<tokenType>, <args; separator=", "><if(!args)>"<tokenType>"<endif>), <ASTLabelType>)
 <endif>
 >>
 

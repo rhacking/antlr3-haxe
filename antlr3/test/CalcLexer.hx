@@ -1,17 +1,18 @@
-// $ANTLR 3.5.3-SNAPSHOT Calc.g 2017-07-12 20:46:08
+// $ANTLR 3.5.3-SNAPSHOT Calc.g 2017-07-12 23:01:38
 package;
 import org.antlr.runtime.*;
+import org.antlr.runtime.BaseRecognizer.*;
 
 class CalcLexer extends Lexer {
-    public static const EOF:Int=-1;
-    public static const T__6:Int=6;
-    public static const T__7:Int=7;
-    public static const T__8:Int=8;
-    public static const T__9:Int=9;
-    public static const T__10:Int=10;
-    public static const T__11:Int=11;
-    public static const Number:Int=4;
-    public static const WS:Int=5;
+    public static var EOF(default, never):Int=-1;
+    public static var T__6(default, never):Int=6;
+    public static var T__7(default, never):Int=7;
+    public static var T__8(default, never):Int=8;
+    public static var T__9(default, never):Int=9;
+    public static var T__10(default, never):Int=10;
+    public static var T__11(default, never):Int=11;
+    public static var Number(default, never):Int=4;
+    public static var WS(default, never):Int=5;
 
     // delegates
     // delegators
@@ -139,7 +140,6 @@ class CalcLexer extends Lexer {
             {
             // Calc.g:40:10: ( '0' .. '9' )+
             var cnt1:Int=0;
-            var breaking = false;
             do {
                 var alt1:Int=2;
                 var LA1_0:Int = input.LA(1);
@@ -162,14 +162,12 @@ class CalcLexer extends Lexer {
             	    }
 
 
-            	    }
-            	    break;
+            	    };
 
             	default :
-            	    if ( cnt1 >= 1 ) {breaking = true; break;}
+            	    if ( cnt1 >= 1 ) break;
                     throw new EarlyExitException(1, input);
                 }
-                if (breaking) break;
                 cnt1++;
             } while (true);
 
@@ -189,7 +187,6 @@ class CalcLexer extends Lexer {
 
                     // Calc.g:40:27: ( '0' .. '9' )+
                     var cnt2:Int=0;
-                    var breaking = false;
                     do {
                         var alt2:Int=2;
                         var LA2_0:Int = input.LA(1);
@@ -212,20 +209,17 @@ class CalcLexer extends Lexer {
                     	    }
 
 
-                    	    }
-                    	    break;
+                    	    };
 
                     	default :
-                    	    if ( cnt2 >= 1 ) {breaking = true; break;}
+                    	    if ( cnt2 >= 1 ) break;
                             throw new EarlyExitException(2, input);
                         }
-                        if (breaking) break;
                         cnt2++;
                     } while (true);
 
 
-                    }
-                    break;
+                    };
 
             }
 
@@ -269,37 +263,33 @@ class CalcLexer extends Lexer {
     public override function mTokens():Void {
         // Calc.g:1:8: ( T__6 | T__7 | T__8 | T__9 | T__10 | T__11 | Number | WS )
         var alt4:Int=8;
-        switch ( input.LA(1) ) {
+        var utf = new haxe.Utf8();
+        utf.addChar(input.LA(1));
+        switch ( utf.toString() ) {
         case '(':
             {
             alt4=1;
             }
-            break;
         case ')':
             {
             alt4=2;
             }
-            break;
         case '*':
             {
             alt4=3;
             }
-            break;
         case '+':
             {
             alt4=4;
             }
-            break;
         case '-':
             {
             alt4=5;
             }
-            break;
         case '/':
             {
             alt4=6;
             }
-            break;
         case '0':
         case '1':
         case '2':
@@ -313,7 +303,6 @@ class CalcLexer extends Lexer {
             {
             alt4=7;
             }
-            break;
         case '\t':
         case '\n':
         case '\r':
@@ -321,7 +310,6 @@ class CalcLexer extends Lexer {
             {
             alt4=8;
             }
-            break;
         default:
             throw new NoViableAltException("", 4, 0, input);
 
@@ -334,64 +322,56 @@ class CalcLexer extends Lexer {
                 mT__6(); 
 
 
-                }
-                break;
+                };
             case 2 :
                 // Calc.g:1:15: T__7
                 {
                 mT__7(); 
 
 
-                }
-                break;
+                };
             case 3 :
                 // Calc.g:1:20: T__8
                 {
                 mT__8(); 
 
 
-                }
-                break;
+                };
             case 4 :
                 // Calc.g:1:25: T__9
                 {
                 mT__9(); 
 
 
-                }
-                break;
+                };
             case 5 :
                 // Calc.g:1:30: T__10
                 {
                 mT__10(); 
 
 
-                }
-                break;
+                };
             case 6 :
                 // Calc.g:1:36: T__11
                 {
                 mT__11(); 
 
 
-                }
-                break;
+                };
             case 7 :
                 // Calc.g:1:42: Number
                 {
                 mNumber(); 
 
 
-                }
-                break;
+                };
             case 8 :
                 // Calc.g:1:49: WS
                 {
                 mWS(); 
 
 
-                }
-                break;
+                };
 
         }
 

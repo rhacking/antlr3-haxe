@@ -49,6 +49,7 @@ package<if(actions.(actionScope).package)> <actions.(actionScope).package><endif
 <actions.(actionScope).header>
 <@imports>
 import org.antlr.runtime.*;
+import org.antlr.runtime.BaseRecognizer.*;
 <if(TREE_PARSER)>
 import org.antlr.runtime.tree.*;
 <endif>
@@ -62,7 +63,7 @@ import org.antlr.runtime.tree.*;
 lexer(grammar, name, tokens, scopes, rules, numRules, filterMode, labelType="Token",
       superClass="Lexer") ::= <<
 class <grammar.recognizerName> extends <if(actions.(actionScope).superClass)><actions.(actionScope).superClass><else><@superClassName><superClass><@end><endif> {
-    <tokens:{it |public static const <it.name>:Int=<it.type>;}; separator="\n">
+    <tokens:{it |public static var <it.name>(default, never):Int=<it.type>;}; separator="\n">
     <scopes:{it |<if(it.isDynamicGlobalScope)><globalAttributeScope(it)><endif>}>
     <actions.lexer.members>
 
@@ -170,12 +171,8 @@ genericParser(grammar, name, scopes, tokens, tokenNames, rules, numRules,
               labelType, members, rewriteElementType,
               filterMode, ASTLabelType="Object") ::= <<
 class <grammar.recognizerName> extends <if(actions.(actionScope).superClass)><actions.(actionScope).superClass><else><@superClassName><superClass><@end><endif> {
-<if(grammar.grammarIsRoot)>
-    public static const tokenNames:Array = [
-        "\<invalid>", "\<EOR>", "\<DOWN>", "\<UP>", <tokenNames; separator=", ">
-    ];<\n>
-<endif>
-    <tokens:{it |public static const <it.name>:Int=<it.type>;}; separator="\n">
+
+    <tokens:{it |public static var <it.name>(default, never):Int=<it.type>;}; separator="\n">
 
     // delegates
     <grammar.delegates: {g|public var <g:delegateName()>:<g.recognizerName>;}; separator="\n">
@@ -189,6 +186,9 @@ class <grammar.recognizerName> extends <if(actions.(actionScope).superClass)><ac
    <! WARNING. bug in ST: this is cut-n-paste into Dbg.stg !>
     public function new(<grammar.delegators:{g|<g:delegateName()>:<g.recognizerName>, }>input:<inputStreamType>, state:RecognizerSharedState = null) {
         super(input, state);
+        this.tokenNames = [
+            "\<invalid>", "\<EOR>", "\<DOWN>", "\<UP>", <tokenNames; separator=", ">
+        ];
         <cyclicDFAs:cyclicDFACtor()>
         <parserCtorBody()>
         <grammar.directDelegates:
@@ -198,7 +198,7 @@ class <grammar.recognizerName> extends <if(actions.(actionScope).superClass)><ac
     }
     <@end>
 
-    public override function get_tokenNames():Array { return <grammar.composite.rootGrammar.recognizerName>.tokenNames; }
+    public override function get_tokenNames():Array\<String> { return tokenNames; }
     public override function get_grammarFileName():String { return "<fileName>"; }
 
     <members>
@@ -538,7 +538,6 @@ positiveClosureBlock(alts,decls,decision,enclosingBlockLevel,blockLevel,decision
 var cnt<decisionNumber>:Int=0;
 <decls>
 <@preloop()>
-var breaking = false;
 do {
     var alt<decisionNumber>:Int=<maxAlt>;
     <@predecision()>
@@ -547,12 +546,11 @@ do {
     switch (alt<decisionNumber>) {
 	<alts:{a | <altSwitchCase(i, a)>}>
 	default :
-	    if ( cnt<decisionNumber> >= 1 ) {breaking = true; break;}
+	    if ( cnt<decisionNumber> >= 1 ) break;
 	    <ruleBacktrackFailure()>
         throw new EarlyExitException(<decisionNumber>, input);
         <! Need to add support for earlyExitException debug hook !>
     }
-    if (breaking) break;
     cnt<decisionNumber>++;
 } while (true);
 <@postloop()>
@@ -565,7 +563,6 @@ closureBlock(alts,decls,decision,enclosingBlockLevel,blockLevel,decisionNumber,m
 // <fileName>:<description>
 <decls>
 <@preloop()>
-var breaking = false;
 do {
     var alt<decisionNumber>:Int=<maxAlt>;
     <@predecision()>
@@ -574,9 +571,7 @@ do {
     switch (alt<decisionNumber>) {
 	<alts:{a | <altSwitchCase(i, a)>}>
 	default :
-	    breaking = true; // FIXME: Might just be able to break here
     }
-    if (breaking) break;
 } while (true);
 <@postloop()>
 >>
@@ -597,8 +592,7 @@ optionalBlockSingleAlt ::= block
 altSwitchCase(altNum, alt) ::= <<
 case <altNum> :
     <@prealt()>
-    <alt>
-    break;<\n>
+    <alt>;<\n>
 >>
 
 /** An alternative is just a list of elements; at outermost level */
@@ -899,7 +893,9 @@ if ( (<labelExpr>) <if(predicates)>&& (<predicates>)<endif>) {
  *  decides if this is possible: CodeGenerator.canGenerateSwitch().
  */
 dfaStateSwitch(k,edges,eotPredictsAlt,description,stateNumber,semPredState) ::= <<
-switch ( input.LA(<k>) ) {
+var utf = new haxe.Utf8();
+utf.addChar(input.LA(<k>));
+switch ( utf.toString() ) {
 <edges; separator="\n">
 default:
 <if(eotPredictsAlt)>
@@ -934,7 +930,6 @@ dfaEdgeSwitch(labels, targetState) ::= <<
     {
     <targetState>
     }
-    break;
 >>
 
 // C y c l i c  D F A
@@ -966,19 +961,19 @@ dfa<dfa.decisionNumber> = new DFA(this, <dfa.decisionNumber>,
  */
 cyclicDFA(dfa) ::= <<
 
-private const DFA<dfa.decisionNumber>_eot:Array =
+private var DFA<dfa.decisionNumber>_eot(default, never):Array =
     DFA.unpackEncodedString("<dfa.javaCompressedEOT; wrap="\"+\n    \"">");
-private const DFA<dfa.decisionNumber>_eof:Array =
+private var DFA<dfa.decisionNumber>_eof(default, never):Array =
     DFA.unpackEncodedString("<dfa.javaCompressedEOF; wrap="\"+\n    \"">");
-private const DFA<dfa.decisionNumber>_min:Array =
+private var DFA<dfa.decisionNumber>_min(default, never):Array =
     DFA.unpackEncodedString("<dfa.javaCompressedMin; wrap="\"+\n    \"">", true);
-private const DFA<dfa.decisionNumber>_max:Array =
+private var DFA<dfa.decisionNumber>_max(default, never):Array =
     DFA.unpackEncodedString("<dfa.javaCompressedMax; wrap="\"+\n    \"">", true);
-private const DFA<dfa.decisionNumber>_accept:Array =
+private var DFA<dfa.decisionNumber>_accept(default, never):Array =
     DFA.unpackEncodedString("<dfa.javaCompressedAccept; wrap="\"+\n    \"">");
-private const DFA<dfa.decisionNumber>_special:Array =
+private var DFA<dfa.decisionNumber>_special(default, never):Array =
     DFA.unpackEncodedString("<dfa.javaCompressedSpecial; wrap="\"+\n    \"">");
-private const DFA<dfa.decisionNumber>_transition:Array = [
+private var DFA<dfa.decisionNumber>_transition(default, never):Array = [
         <dfa.javaCompressedTransition:{s|DFA.unpackEncodedString("<s; wrap="\"+\n\"">")}; separator=",\n">
 ];
 <if(dfa.specialStateSTs)>
@@ -1303,7 +1298,7 @@ execForcedAction(action) ::= "<action>"
 // M I S C (properties, etc...)
 
 bitset(name, words64) ::= <<
-public static const <name>:BitSet = new BitSet([<words64:{it |<it>};separator=", ">]);<\n>
+public static var <name>(default, never):BitSet = new BitSet([<words64:{it |<it>};separator=", ">]);<\n>
 >>
 
 codeFileExtension() ::= ".hx"

@@ -1,30 +1,31 @@
-// $ANTLR 3.5.3-SNAPSHOT Calc.g 2017-07-12 20:46:08
+// $ANTLR 3.5.3-SNAPSHOT Calc.g 2017-07-12 23:01:38
 package;
 import org.antlr.runtime.*;
+import org.antlr.runtime.BaseRecognizer.*;
 
 import org.antlr.runtime.tree.*;
 
 
 class CalcParser extends Parser {
-    public static const tokenNames:Array = [
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "Number", "WS", "'('", "')'", "'*'", "'+'", "'-'", "'/'"
-    ];
 
-    public static const EOF:Int=-1;
-    public static const T__6:Int=6;
-    public static const T__7:Int=7;
-    public static const T__8:Int=8;
-    public static const T__9:Int=9;
-    public static const T__10:Int=10;
-    public static const T__11:Int=11;
-    public static const Number:Int=4;
-    public static const WS:Int=5;
+    public static var EOF(default, never):Int=-1;
+    public static var T__6(default, never):Int=6;
+    public static var T__7(default, never):Int=7;
+    public static var T__8(default, never):Int=8;
+    public static var T__9(default, never):Int=9;
+    public static var T__10(default, never):Int=10;
+    public static var T__11(default, never):Int=11;
+    public static var Number(default, never):Int=4;
+    public static var WS(default, never):Int=5;
 
     // delegates
     // delegators
 
     public function new(input:TokenStream, state:RecognizerSharedState = null) {
         super(input, state);
+        this.tokenNames = [
+            "<invalid>", "<EOR>", "<DOWN>", "<UP>", "Number", "WS", "'('", "')'", "'*'", "'+'", "'-'", "'/'"
+        ];
     }
 
 protected var adaptor:TreeAdaptor = new CommonTreeAdaptor();
@@ -35,7 +36,7 @@ override public function set treeAdaptor(adaptor:TreeAdaptor):void {
 override public function get treeAdaptor():TreeAdaptor {
     return adaptor;
 }
-    public override function get_tokenNames():Array { return CalcParser.tokenNames; }
+    public override function get_tokenNames():Array<String> { return tokenNames; }
     public override function get_grammarFileName():String { return "Calc.g"; }
 
 
@@ -64,7 +65,7 @@ override public function get treeAdaptor():TreeAdaptor {
             // Calc.g:11:5: ( additionExp )
             // Calc.g:11:10: additionExp
             {
-            root_0 = CommonTree(adaptor.nil());
+            root_0 = cast(adaptor.nil(), CommonTree);
 
 
             pushFollow(FOLLOW_additionExp_in_eval52);
@@ -132,7 +133,7 @@ override public function get treeAdaptor():TreeAdaptor {
             // Calc.g:16:5: ( multiplyExp ( '+' ^ multiplyExp | '-' ^ multiplyExp )* )
             // Calc.g:16:10: multiplyExp ( '+' ^ multiplyExp | '-' ^ multiplyExp )*
             {
-            root_0 = CommonTree(adaptor.nil());
+            root_0 = cast(adaptor.nil(), CommonTree);
 
 
             pushFollow(FOLLOW_multiplyExp_in_additionExp75);
@@ -143,7 +144,6 @@ override public function get treeAdaptor():TreeAdaptor {
             adaptor.addChild(root_0, multiplyExp2.tree);
 
             // Calc.g:17:10: ( '+' ^ multiplyExp | '-' ^ multiplyExp )*
-            var breaking = false;
             do {
                 var alt1:Int=3;
                 var LA1_0:Int = input.LA(1);
@@ -174,8 +174,7 @@ override public function get treeAdaptor():TreeAdaptor {
 
             	    adaptor.addChild(root_0, multiplyExp4.tree);
 
-            	    }
-            	    break;
+            	    };
             	case 2 :
             	    // Calc.g:18:12: '-' ^ multiplyExp
             	    {
@@ -193,13 +192,10 @@ override public function get treeAdaptor():TreeAdaptor {
 
             	    adaptor.addChild(root_0, multiplyExp6.tree);
 
-            	    }
-            	    break;
+            	    };
 
             	default :
-            	    breaking = true; // FIXME: Might just be able to break here
                 }
-                if (breaking) break;
             } while (true);
 
 
@@ -261,7 +257,7 @@ override public function get treeAdaptor():TreeAdaptor {
             // Calc.g:24:5: ( atomExp ( '*' ^ atomExp | '/' ^ atomExp )* )
             // Calc.g:24:10: atomExp ( '*' ^ atomExp | '/' ^ atomExp )*
             {
-            root_0 = CommonTree(adaptor.nil());
+            root_0 = cast(adaptor.nil(), CommonTree);
 
 
             pushFollow(FOLLOW_atomExp_in_multiplyExp144);
@@ -272,7 +268,6 @@ override public function get treeAdaptor():TreeAdaptor {
             adaptor.addChild(root_0, atomExp7.tree);
 
             // Calc.g:25:10: ( '*' ^ atomExp | '/' ^ atomExp )*
-            var breaking = false;
             do {
                 var alt2:Int=3;
                 var LA2_0:Int = input.LA(1);
@@ -303,8 +298,7 @@ override public function get treeAdaptor():TreeAdaptor {
 
             	    adaptor.addChild(root_0, atomExp9.tree);
 
-            	    }
-            	    break;
+            	    };
             	case 2 :
             	    // Calc.g:26:12: '/' ^ atomExp
             	    {
@@ -322,13 +316,10 @@ override public function get treeAdaptor():TreeAdaptor {
 
             	    adaptor.addChild(root_0, atomExp11.tree);
 
-            	    }
-            	    break;
+            	    };
 
             	default :
-            	    breaking = true; // FIXME: Might just be able to break here
                 }
-                if (breaking) break;
             } while (true);
 
 
@@ -399,7 +390,7 @@ override public function get treeAdaptor():TreeAdaptor {
                 case 1 :
                     // Calc.g:34:10: Number
                     {
-                    root_0 = CommonTree(adaptor.nil());
+                    root_0 = cast(adaptor.nil(), CommonTree);
 
 
                     Number12=Token(matchStream(input,Number,FOLLOW_Number_in_atomExp212)); 
@@ -409,12 +400,11 @@ override public function get treeAdaptor():TreeAdaptor {
                     adaptor.addChild(root_0, Number12_tree);
 
 
-                    }
-                    break;
+                    };
                 case 2 :
                     // Calc.g:35:10: '(' additionExp ')'
                     {
-                    root_0 = CommonTree(adaptor.nil());
+                    root_0 = cast(adaptor.nil(), CommonTree);
 
 
                     char_literal13=Token(matchStream(input,6,FOLLOW_6_in_atomExp223)); 
@@ -438,8 +428,7 @@ override public function get treeAdaptor():TreeAdaptor {
                     adaptor.addChild(root_0, char_literal15_tree);
 
 
-                    }
-                    break;
+                    };
 
             }
             retval.stop = input.LT(-1);
@@ -465,21 +454,21 @@ override public function get treeAdaptor():TreeAdaptor {
 
  
 
-    public static const FOLLOW_additionExp_in_eval52:BitSet = new BitSet([0x0000000000000002]);
-    public static const FOLLOW_multiplyExp_in_additionExp75:BitSet = new BitSet([0x0000000000000602]);
-    public static const FOLLOW_9_in_additionExp89:BitSet = new BitSet([0x0000000000000050]);
-    public static const FOLLOW_multiplyExp_in_additionExp92:BitSet = new BitSet([0x0000000000000602]);
-    public static const FOLLOW_10_in_additionExp106:BitSet = new BitSet([0x0000000000000050]);
-    public static const FOLLOW_multiplyExp_in_additionExp109:BitSet = new BitSet([0x0000000000000602]);
-    public static const FOLLOW_atomExp_in_multiplyExp144:BitSet = new BitSet([0x0000000000000902]);
-    public static const FOLLOW_8_in_multiplyExp157:BitSet = new BitSet([0x0000000000000050]);
-    public static const FOLLOW_atomExp_in_multiplyExp160:BitSet = new BitSet([0x0000000000000902]);
-    public static const FOLLOW_11_in_multiplyExp174:BitSet = new BitSet([0x0000000000000050]);
-    public static const FOLLOW_atomExp_in_multiplyExp177:BitSet = new BitSet([0x0000000000000902]);
-    public static const FOLLOW_Number_in_atomExp212:BitSet = new BitSet([0x0000000000000002]);
-    public static const FOLLOW_6_in_atomExp223:BitSet = new BitSet([0x0000000000000050]);
-    public static const FOLLOW_additionExp_in_atomExp225:BitSet = new BitSet([0x0000000000000080]);
-    public static const FOLLOW_7_in_atomExp227:BitSet = new BitSet([0x0000000000000002]);
+    public static var FOLLOW_additionExp_in_eval52(default, never):BitSet = new BitSet([0x0000000000000002]);
+    public static var FOLLOW_multiplyExp_in_additionExp75(default, never):BitSet = new BitSet([0x0000000000000602]);
+    public static var FOLLOW_9_in_additionExp89(default, never):BitSet = new BitSet([0x0000000000000050]);
+    public static var FOLLOW_multiplyExp_in_additionExp92(default, never):BitSet = new BitSet([0x0000000000000602]);
+    public static var FOLLOW_10_in_additionExp106(default, never):BitSet = new BitSet([0x0000000000000050]);
+    public static var FOLLOW_multiplyExp_in_additionExp109(default, never):BitSet = new BitSet([0x0000000000000602]);
+    public static var FOLLOW_atomExp_in_multiplyExp144(default, never):BitSet = new BitSet([0x0000000000000902]);
+    public static var FOLLOW_8_in_multiplyExp157(default, never):BitSet = new BitSet([0x0000000000000050]);
+    public static var FOLLOW_atomExp_in_multiplyExp160(default, never):BitSet = new BitSet([0x0000000000000902]);
+    public static var FOLLOW_11_in_multiplyExp174(default, never):BitSet = new BitSet([0x0000000000000050]);
+    public static var FOLLOW_atomExp_in_multiplyExp177(default, never):BitSet = new BitSet([0x0000000000000902]);
+    public static var FOLLOW_Number_in_atomExp212(default, never):BitSet = new BitSet([0x0000000000000002]);
+    public static var FOLLOW_6_in_atomExp223(default, never):BitSet = new BitSet([0x0000000000000050]);
+    public static var FOLLOW_additionExp_in_atomExp225(default, never):BitSet = new BitSet([0x0000000000000080]);
+    public static var FOLLOW_7_in_atomExp227(default, never):BitSet = new BitSet([0x0000000000000002]);
 
 }
 }
