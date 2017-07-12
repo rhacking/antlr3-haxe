@@ -1,0 +1,106 @@
+-------------------------------------------------------------------------------
+Test set: org.antlr.test.TestSemanticPredicates
+-------------------------------------------------------------------------------
+Tests run: 42, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec <<< FAILURE! - in org.antlr.test.TestSemanticPredicates
+testIgnorePredFromLL2AltPredUnionNeeded(org.antlr.test.TestSemanticPredicates)  Time elapsed: 0.002 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...-C->:s3=>2
+.s1-{!((p[3||p2]))}?->:s5=>4
+.s1-{p2...> but was:<...-C->:s3=>2
+.s1-{!((p[2||p3]))}?->:s5=>4
+.s1-{p2...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestSemanticPredicates.checkDecision(TestSemanticPredicates.java:901)
+	at org.antlr.test.TestSemanticPredicates.testIgnorePredFromLL2AltPredUnionNeeded(TestSemanticPredicates.java:318)
+
+testGatedPredDoesNotForceAllToBeGated2(org.antlr.test.TestSemanticPredicates)  Time elapsed: 0.002 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<.s0-B->.s1
+.s0-C&&{([r&&q])}?->:s3=>2
+.s1-{p}?...> but was:<.s0-B->.s1
+.s0-C&&{([q&&r])}?->:s3=>2
+.s1-{p}?...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestSemanticPredicates.checkDecision(TestSemanticPredicates.java:901)
+	at org.antlr.test.TestSemanticPredicates.testGatedPredDoesNotForceAllToBeGated2(TestSemanticPredicates.java:539)
+
+testGatedPred(org.antlr.test.TestSemanticPredicates)  Time elapsed: 0.001 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<.s0-'a'&&{([q||p)}?->.s1
+.s0-'b'&&{q}?->:s4=>2
+.s1-'a'..'b'&&{q}?->:s4=>2
+.s1-<EOT>&&{(q||p])}?->.s2
+.s2-{p}?->:...> but was:<.s0-'a'&&{([p||q)}?->.s1
+.s0-'b'&&{q}?->:s4=>2
+.s1-'a'..'b'&&{q}?->:s4=>2
+.s1-<EOT>&&{(p||q])}?->.s2
+.s2-{p}?->:...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestSemanticPredicates.checkDecision(TestSemanticPredicates.java:901)
+	at org.antlr.test.TestSemanticPredicates.testGatedPred(TestSemanticPredicates.java:454)
+
+testOrPredicates(org.antlr.test.TestSemanticPredicates)  Time elapsed: 0.001 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<.s0-A->.s1
+.s1-{(p1[a||p1])}?->:s2=>1
+.s1-{p2}...> but was:<.s0-A->.s1
+.s1-{(p1[||p1a])}?->:s2=>1
+.s1-{p2}...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestSemanticPredicates.checkDecision(TestSemanticPredicates.java:901)
+	at org.antlr.test.TestSemanticPredicates.testOrPredicates(TestSemanticPredicates.java:140)
+
+testORGatedPred(org.antlr.test.TestSemanticPredicates)  Time elapsed: 0.003 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<.s0-B->.s1
+.s0-C&&{([r&&q)}?->:s3=>2
+.s1-{(s&&q])}?->:s3=>2
+.s1-{p}?...> but was:<.s0-B->.s1
+.s0-C&&{([q&&r)}?->:s3=>2
+.s1-{(q&&s])}?->:s3=>2
+.s1-{p}?...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestSemanticPredicates.checkDecision(TestSemanticPredicates.java:901)
+	at org.antlr.test.TestSemanticPredicates.testORGatedPred(TestSemanticPredicates.java:556)
+
+testUniquePredicateOR(org.antlr.test.TestSemanticPredicates)  Time elapsed: 0.002 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<.s0-X->.s1
+.s1-{([(b||a)&&c])}?->:s2=>1
+.s1-{c}?...> but was:<.s0-X->.s1
+.s1-{([c&&(a||b)])}?->:s2=>1
+.s1-{c}?...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestSemanticPredicates.checkDecision(TestSemanticPredicates.java:901)
+	at org.antlr.test.TestSemanticPredicates.testUniquePredicateOR(TestSemanticPredicates.java:745)
+
+testAndPredicates(org.antlr.test.TestSemanticPredicates)  Time elapsed: 0.001 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<.s0-A->.s1
+.s1-{(p1[a&&p1])}?->:s2=>1
+.s1-{p2}...> but was:<.s0-A->.s1
+.s1-{(p1[&&p1a])}?->:s2=>1
+.s1-{p2}...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestSemanticPredicates.checkDecision(TestSemanticPredicates.java:901)
+	at org.antlr.test.TestSemanticPredicates.testAndPredicates(TestSemanticPredicates.java:127)
+
+testGatedPredInCyclicDFA(org.antlr.test.TestSemanticPredicates)  Time elapsed: 0.002 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<.s0-'a'&&{([q||p)}?->.s1
+.s0-'b'&&{q}?->:s5=>2
+.s1-'a'&&{(q||p)}?->.s1
+.s1-'b'&&{q}?->:s5=>2
+.s1-'x'&&{(q||p)}?->.s2
+.s2-<EOT>&&{(q||p])}?->.s3
+.s3-{p}?->:...> but was:<.s0-'a'&&{([p||q)}?->.s1
+.s0-'b'&&{q}?->:s5=>2
+.s1-'a'&&{(p||q)}?->.s1
+.s1-'b'&&{q}?->:s5=>2
+.s1-'x'&&{(p||q)}?->.s2
+.s2-<EOT>&&{(p||q])}?->.s3
+.s3-{p}?->:...>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestSemanticPredicates.checkDecision(TestSemanticPredicates.java:901)
+	at org.antlr.test.TestSemanticPredicates.testGatedPredInCyclicDFA(TestSemanticPredicates.java:486)
+

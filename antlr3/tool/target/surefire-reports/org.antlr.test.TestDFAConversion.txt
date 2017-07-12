@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.antlr.test.TestDFAConversion
 -------------------------------------------------------------------------------
-Tests run: 81, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.089 sec <<< FAILURE! - in org.antlr.test.TestDFAConversion
-testMultipleSequenceCollision(org.antlr.test.TestDFAConversion)  Time elapsed: 0.005 sec  <<< FAILURE!
+Tests run: 81, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.119 sec <<< FAILURE! - in org.antlr.test.TestDFAConversion
+testMultipleSequenceCollision(org.antlr.test.TestDFAConversion)  Time elapsed: 0.006 sec  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<[A]> but was:<[B]>
 	at org.junit.Assert.assertEquals(Assert.java:125)
 	at org.junit.Assert.assertEquals(Assert.java:147)

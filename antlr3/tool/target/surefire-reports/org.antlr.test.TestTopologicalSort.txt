@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: org.antlr.test.TestTopologicalSort
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in org.antlr.test.TestTopologicalSort
+testFairlyLargeGraph(org.antlr.test.TestTopologicalSort)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[H, F, E, D, [G, A, B], C]> but was:<[H, F, E, D, [A, B, G], C]>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestTopologicalSort.testFairlyLargeGraph(TestTopologicalSort.java:57)
+
+testParserLexerCombo(org.antlr.test.TestTopologicalSort)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<..., JavaLexer.tokens, [JavaParser.g, Ref.g, D]ef.g]> but was:<..., JavaLexer.tokens, [Def.g, JavaParser.g, R]ef.g]>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestTopologicalSort.testParserLexerCombo(TestTopologicalSort.java:113)
+
+testSimpleTokenDependence(org.antlr.test.TestTopologicalSort)  Time elapsed: 0 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...ava.g, Java.tokens, [Ref.g, D]ef.g]> but was:<...ava.g, Java.tokens, [Def.g, R]ef.g]>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.antlr.test.TestTopologicalSort.testSimpleTokenDependence(TestTopologicalSort.java:99)
+

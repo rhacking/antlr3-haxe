@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.antlr.test.TestLexer
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.07 sec - in org.antlr.test.TestLexer

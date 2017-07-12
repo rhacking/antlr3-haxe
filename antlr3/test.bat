@@ -1,0 +1,1 @@
+java -jar antlr-complete\target\antlr-complete-3.5.3-SNAPSHOT.jar -o test Calc.g
