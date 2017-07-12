@@ -1,0 +1,6 @@
+-cp src
+-cp runtime
+-D analyzer-optimize
+-main Main
+-lib as3hx
+--interp
